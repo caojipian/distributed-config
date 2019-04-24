@@ -18,7 +18,7 @@ public class App
     {
       SpringApplication.run(App.class, args);
       //无论使用apollo还是xdiamond,获取配置代码都如下，不需要改动，只需要把上面的@EnableApollo改成@EnableXdiamond,
-      //当然注解中有个文件路径参数是获取连接参数的，需要改成相应平台的参数
+      //当然注解中有个文件路径参数,默认是通过这个文件获取连接参数的，需要改成相应平台的参数
       ConfigClient configClient=context.getBean(ConfigClientGroup.class).get(ConfigConsts.NAMESPACE_APPLICATION);
       System.out.println(configClient.getProperty("swagger.switch", "fff"));
     }
